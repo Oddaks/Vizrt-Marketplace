@@ -1,20 +1,16 @@
 import './App.css';
 import logo from './logo.svg';
 import LandingPage from '../src/pages/LandingPage'
-import Header from '../src/components/Header';
-import Footer from '../src/components/Footer'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 
 function App() {
   return (
     <div className="App">
-      <header>
-      <Header  />
 
-      </header>
-      <body>
+      <Header  />
         <LandingPage />
-        </body>
       <Footer />
     </div>
   );
