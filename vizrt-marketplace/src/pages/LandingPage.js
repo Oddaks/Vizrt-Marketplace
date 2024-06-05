@@ -3,7 +3,7 @@ import Logo from "../components/MarketplaceLogo";
 
 const LandingPage = ()=>{
     return(
-        <div>
+        <div className="bg-viz-blue">
             <Logo></Logo>
         </div>
     )
