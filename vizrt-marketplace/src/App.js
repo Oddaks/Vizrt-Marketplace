@@ -1,7 +1,7 @@
 import './App.css';
 import logo from './logo.svg';
 import LandingPage from '../src/pages/LandingPage'
-import Header from './index.js';
+import Header from '../src/components/Header';
 import Footer from '../src/components/Footer'
 
 
