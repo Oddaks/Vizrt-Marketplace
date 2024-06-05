@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoffee, faSolid } from '@fortawesome/free-solid-svg-icons';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,6 +15,7 @@ root.render(
 
 // Header
 const Header = () => {
+    const [showMenu, setShowMenu] = useState(false);
     return (
         <header className='navbar'>
             <div className="logo">
@@ -21,28 +23,45 @@ const Header = () => {
             <nav>
                 <ul className="nav-links">
                     <li>
-                        <button className="back-button">
-                            <i className="icon">Icon 1</i>
-                        </button>
+                   { /* <button className="back-button">
+                        <i className="icon">Icon 1</i>
+                         </button> */}
                     </li>
                     <li>
-                        <button className="cart-button">
-                            <i className="icon">Icon 2</i>
-                        </button>
+                    <button  className="cart-button">
+                    <FontAwesomeIcon icon={faCoffee} />
+                    </button>
                     </li>
                     <li className="dropdown">
-                        <button className="dropdown-button">
-                            <i className="icon">Icon 3</i>
-                        </button>
-                        <ul className="dropdown-menu">
+                    <button onClick={() => setShowMenu(!showMenu)} className="dropdown-button">
+                        {showMenu ? "Menu": "X"}
+                        <i className="icon">Icon 3</i>
+                    </button>
+                        {showMenu && (
+                        <>
+                        <a href="#">
+              Button
+            </a>
+            <a href="#">
+              About
+            </a>
+            <a href="#">
+              Contact
+            </a>
+          </>
+        )}
+                       {/* <ul className="dropdown-menu">
                             <li>Dropdown Item 1</li>
-                            <li>Dropdown Item 2</li>
+                            <li>Dashboard</li>
                             <li>Dropdown Item 3</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <input type="text" className="search-bar" placeholder="Search..." />
-                    </li>
+                        </ul> */}
+                </li>
+                <li>
+                    <div className="search-bar-container">
+                    <input type="text" className="search-bar" placeholder="Search..." />
+                    <FontAwesomeIcon icon={faSolid} className="search-icon" />
+                    </div>
+                </li>
                 </ul>
             </nav>
         </header>

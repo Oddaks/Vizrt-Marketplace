@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base'; 
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 body {
   margin: 0;
@@ -19,8 +19,8 @@ code {
 
 /* Header */
 .navbar {
-  background-color: #1E3541; /* Må finne nøyaktig farge og importere fra stylesheet*/
-  color: #fff;
+  background-color: #ffffff; /* Må finne nøyaktig farge og importere fra stylesheet*/
+  color: #000000;
   padding: 10px;
 }
 
