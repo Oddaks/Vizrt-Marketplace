@@ -1,22 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import React from 'react';
+/*import React from 'react';
+import './Header.css';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-
-// Header
 const Header = () => {
     return (
         <header className='navbar'>
             <div className="logo">
+                <img src={require('../Downloads/smidig_prosjekt/Vizrt-Marketplace/vizrt-marketplace/src/LOGOOO')} alt="Logo" className="w-16 h-16" />
             </div>
             <nav>
                 <ul className="nav-links">
@@ -50,8 +39,4 @@ const Header = () => {
 };
 
 export default Header;
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ */

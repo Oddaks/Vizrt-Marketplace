@@ -1,0 +1,72 @@
+/* Header.css 
+
+.navbar {
+    background-color: #333333;
+    color: #fff;
+    padding: 10px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.navbar a:hover {
+    background-color: #555;
+}
+
+.navbar.logo {
+    top: 10px;
+    left: 8px;
+    width: 270px;
+    height: 90px;
+    position: absolute;
+}
+
+.navbar.arrowback {
+    top: 127px;
+    left: 28px;
+    width: 25px;
+    height: 20px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+}
+
+.navbar.searchbar {
+    top: 0px;
+    left: 0px;
+    width: 232px;
+    height: 40px;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    align-items: center;
+    flex-shrink: 0;
+    border-color: rgba(241, 131, 75, 1);
+    border-style: solid;
+    border-width: 2px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.navbar.shopping-cart {
+    top: 0px;
+    left: 271px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+}
+*/
