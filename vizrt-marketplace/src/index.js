@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { useState } from "react";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee, faSolid } from '@fortawesome/free-solid-svg-icons';
+import { faCoffee, faMagnifyingGlass, faBars } from '@fortawesome/free-solid-svg-icons';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -23,45 +24,46 @@ const Header = () => {
             <nav>
                 <ul className="nav-links">
                     <li>
-                   { /* <button className="back-button">
-                        <i className="icon">Icon 1</i>
-                         </button> */}
+                        {/* <button className="back-button">
+                            <i className="icon">Icon 1</i>
+                        </button> */}
                     </li>
                     <li>
-                    <button  className="cart-button">
-                    <FontAwesomeIcon icon={faCoffee} />
-                    </button>
+                        <button className="cart-button">
+                            <FontAwesomeIcon icon={faCoffee} />
+                        </button>
                     </li>
                     <li className="dropdown">
-                    <button onClick={() => setShowMenu(!showMenu)} className="dropdown-button">
-                        {showMenu ? "Menu": "X"}
-                        <i className="icon">Icon 3</i>
-                    </button>
+                        <button onClick={() => setShowMenu(!showMenu)} className="dropdown-button">
+                            <FontAwesomeIcon icon={faBars} />
+                            {showMenu ? "Menu" : "X"}
+                            <i className="icon">Icon 3</i>
+                        </button>
                         {showMenu && (
-                        <>
-                        <a href="#">
-              Button
-            </a>
-            <a href="#">
-              About
-            </a>
-            <a href="#">
-              Contact
-            </a>
-          </>
-        )}
-                       {/* <ul className="dropdown-menu">
+                            <>
+                                <a href="#">
+                                    Button
+                                </a>
+                                <a href="#">
+                                    About
+                                </a>
+                                <a href="">
+                                    Contact
+                                </a>
+                            </>
+                        )}
+                        {/* <ul className="dropdown-menu">
                             <li>Dropdown Item 1</li>
                             <li>Dashboard</li>
                             <li>Dropdown Item 3</li>
                         </ul> */}
-                </li>
-                <li>
-                    <div className="search-bar-container">
-                    <input type="text" className="search-bar" placeholder="Search..." />
-                    <FontAwesomeIcon icon={faSolid} className="search-icon" />
-                    </div>
-                </li>
+                    </li>
+                    <li>
+                        <div className="search-bar-container">
+                            <input type="text" className="search-bar" placeholder="Search..." />
+                            <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon" />
+                        </div>
+                    </li>
                 </ul>
             </nav>
         </header>
