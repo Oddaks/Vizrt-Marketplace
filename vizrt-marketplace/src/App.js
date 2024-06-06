@@ -1,14 +1,19 @@
 import './App.css';
+import Header from './components/Header'
 import LandingPage from '../src/pages/LandingPage';
 import StorePage from '../src/pages/StorePage';
 import ProductPage from '../src/pages/ProductPage';
-import Footer from '../src/components/Footer';
+import Footer from './components/Footer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+
 
 function App() {
   return (
     <div>
+      <nav>
+      <Header />
+      </nav>
       <BrowserRouter>
         <nav className="bg-white">
           <ul className="grid grid-cols-3 gap-8 p-8 justify-items-center font-bold text-orange-500">
