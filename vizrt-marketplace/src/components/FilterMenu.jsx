@@ -4,6 +4,7 @@ const FilterMenu = ({
     category, setCategory, verifiedUser, setVerifiedUser,
     rating, setRating, price, setPrice, color, setColor, filterProducts
 }) => {
+    //filter menu togggles
     const toggleVerifiedUser = () => {
         setVerifiedUser(prevStatus => prevStatus === 'true' ? 'false' : 'true');
     };
