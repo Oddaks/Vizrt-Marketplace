@@ -21,13 +21,11 @@ function App() {
             <li className='hover:text-black'><Link to="/">Landing page</Link></li>
             <li className='hover:text-black'><Link to="/StorePage">store page</Link></li>
             <li className='hover:text-black'><Link to="/ProductPage">Product page</Link></li>
-
           </ul>
         </nav>
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="StorePage" element={<StorePage />} />
-
           <Route path="ProductPage" element={<ProductPage />} />
         </Routes>
         <Footer />
