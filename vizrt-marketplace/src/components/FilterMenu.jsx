@@ -18,7 +18,7 @@ const FilterMenu = ({
 
     return (
         <div className="col-span-1 p-4 space-y-4">
-            <div className="mb-4 flex items-center justify-center">
+             <div className="mb-4 flex items-center justify-center">
                 <label className="mr-2 text-white text-lg">Verified User:</label>
                 <div className="flex items-center relative border border-gray-300 rounded-full overflow-hidden w-24" onClick={toggleVerifiedUser}>
                     <span className={`text-sm mr-2 cursor-pointer ${verifiedUser === 'true' ? 'text-green-500 font-bold' : 'text-red-500'}`}>No</span>
