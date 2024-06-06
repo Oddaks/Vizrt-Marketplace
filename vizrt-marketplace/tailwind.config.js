@@ -5,7 +5,8 @@ module.exports = {
     extend: {
       backgroundColor: {
         'viz-blue': '#1D363F',
-        'viz-orange': '#EF804E'
+        'viz-orange': '#EF804E',
+        'viz-green': '#1E3541'
       },
       backgroundImage: {
         'gradient-to-r': 'linear-gradient(to right, #D66932, #BC2F14)',
