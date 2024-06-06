@@ -1,5 +1,5 @@
 import './App.css';
-import LandingPage from '../src/pages/LandingPage'
+import StorePage from '../src/pages/StorePage'
 import Footer from '../src/components/Footer'
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
           <li className='hover:text-black'>List of races</li>
         </ul>
       </nav>
-      <LandingPage></LandingPage>
+      <StorePage></StorePage>
       <Footer></Footer>
     </div>
 
