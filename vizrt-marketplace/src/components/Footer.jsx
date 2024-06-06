@@ -1,4 +1,4 @@
-const Footer = () => {
+const Footer=()=> {
   return (
     <footer className="relative bg-viz-orange">
       <div className="flex justify-between space-x-4 items-center text-white">
