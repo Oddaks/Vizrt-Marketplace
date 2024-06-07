@@ -19,13 +19,14 @@ const Header = () => {
     };
 
     useEffect(() => {
+        // Event listener for clicks outside the dropdown menu
         if (showMenu) {
             document.addEventListener('mousedown', handleClickOutside);
         } else {
             document.removeEventListener('mousedown', handleClickOutside);
         }
 
-        // Cleanup the event listener on component unmount
+        // Cleanup the event listener on component unmount or when showMenu changes
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
@@ -73,14 +74,11 @@ const Header = () => {
                         <button
                             onClick={() => setShowMenu(!showMenu)} // Toggle the dropdown menu on button click
                             className="dropdown-button text-black p-1 no-underline">
-                            <FontAwesomeIcon icon={faBars} 
-                            style={{ fontSize: '30px' }} />
-                            {showMenu}
+                            <FontAwesomeIcon icon={faBars} style={{ fontSize: '30px' }} />
                         </button>
                         {/* Dropdown menu items */}
                         {showMenu && (
-                            <div ref={dropdownRef} className="dropdown-menu bg-[#1A2C33] border border-[#F1834B] absolute z-10 mt-2 w-64 h-64" 
-                            style={{ top: "182%", right: "-25%" }}>
+                            <div ref={dropdownRef} className="dropdown-menu bg-[#1A2C33] border border-[#F1834B] absolute z-10 mt-2 w-64 h-64" style={{ top: "182%", right: "-25%" }}>
                                 <a href="#" className="block p-7 text-[#F1834B] border-b border-[#F1834B] text-lg last:border-0">
                                     <FontAwesomeIcon
                                         icon={faUserCircle}

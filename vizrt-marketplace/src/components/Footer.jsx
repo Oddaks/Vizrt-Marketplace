@@ -1,19 +1,37 @@
-const Footer=()=> {
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
+
+const Footer = () => {
   return (
     <footer className="relative bg-viz-orange">
       <div className="flex justify-between space-x-4 items-center text-white">
-        <p className="mb-2 mt-2 p-5 text-left">Trusted By The Best</p>
-        <div className="text-center">
-          <p>Vizrt's Customers Success provides industry-leading service,</p>
-          <p>delivers customer satisfaction,and robust</p>
-          <p>adoption of Vizrt software to best support users.</p>
+        <div className="flex items-center mb-2 mt-2 p-5 text-center"> 
+          <FontAwesomeIcon icon={faCircleCheck} className="mr-2" size="2x" />
+          <p className="mx-auto">Trusted By 
+          <br />The Best</p>
         </div>
-        <div className="mb-2 mt-2 p-5 text-right">
-          <p>Our customers tell the worlds stories</p>
-          <p>and we ensure they are told seamlessly</p>
+        <div className="flex items-center">
+          <FontAwesomeIcon icon={faCircleCheck} className="mr-2" size="2x" />
+          <div className="text-center text-sm"> 
+            <p>
+              Vizrt's Customers Success provides industry-leading service,
+              <br /> delivers customer satisfaction,
+              <br /> and robust adoption of Vizrt software
+              <br /> to best support users.
+            </p>
+          </div>
+        </div>
+        <div className="flex items-center mb-2 mt-2 p-5">
+          <FontAwesomeIcon icon={faCircleCheck} className="mr-2" size="2x" />
+          <div className="text-center"> 
+            <p>
+              Our customers tell the world's stories <br /> and we ensure they are told seamlessly
+            </p>
+          </div>
         </div>
       </div>
     </footer>
   );
 };
+
 export default Footer;

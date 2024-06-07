@@ -1,5 +1,4 @@
 import './App.css';
-
 import Header from './components/Header'
 import LandingPage from '../src/pages/LandingPage';
 import StorePage from '../src/pages/StorePage';

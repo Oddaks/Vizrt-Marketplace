@@ -1,5 +1,4 @@
 import React from "react";
-import Logo from "../components/MarketplaceLogo";
 import BackButton from "../components/BackButton";
 
 const ProductPage = ()=>{
