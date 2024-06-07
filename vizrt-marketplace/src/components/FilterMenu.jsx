@@ -13,6 +13,10 @@ const FilterMenu = ({
         setCategory(category === value ? '' : value);
     };
 
+    const toggleRating = (value) => {
+        setRating(rating === value ? '' : value);
+    };
+
     const toggleColor = (value) => {
         setColor(color === value ? '' : value);
     };
@@ -30,18 +34,29 @@ const FilterMenu = ({
                     <span className={`text-sm ml-2 cursor-pointer ${verifiedUser === 'false' ? 'text-red-500 font-bold' : 'text-green-500'}`}>Yes</span>
                 </div>
             </div>
-                <div>                    
-                    <h3 className="text-xl font-extrabold text-orange-500 text-center">Format</h3>
-                    <div className="p-4 bg-viz-green border border-[#82AAB9] space-y-2">
-                        <label className={`block cursor-pointer ${category === 'Overlays' ? 'text-orange-500' : 'text-white'}`} onClick={() => toggleCategory('Overlays')}>Overlays</label>
-                        <label className={`block cursor-pointer ${category === 'Banners' ? 'text-orange-500' : 'text-white'}`} onClick={() => toggleCategory('Banners')}>Banners</label>
-                        <label className={`block cursor-pointer ${category === 'Alerts' ? 'text-orange-500' : 'text-white'}`} onClick={() => toggleCategory('Alerts')}>Alerts</label>
-                        <label className={`block cursor-pointer ${category === 'Backgrounds' ? 'text-orange-500' : 'text-white'}`} onClick={() => toggleCategory('Backgrounds')}>Backgrounds</label>
-                        <label className={`block cursor-pointer ${category === 'Transitions' ? 'text-orange-500' : 'text-white'}`} onClick={() => toggleCategory('Transitions')}>Transitions</label>
-                        <label className={`block cursor-pointer ${category === 'Bundle' ? 'text-orange-500' : 'text-white'}`} onClick={() => toggleCategory('Bundle')}>Bundle</label>
-                        <label className={`block cursor-pointer ${category === 'Elements' ? 'text-orange-500' : 'text-white'}`} onClick={() => toggleCategory('Elements')}>Elements</label>
-                    </div>
+            <div>                    
+                <h3 className="text-xl font-extrabold text-orange-500 text-center">Format</h3>
+                <div className="p-4 bg-viz-green border border-[#82AAB9] space-y-2">
+                    <label className={`block cursor-pointer ${category === 'Overlays' ? 'text-orange-500' : 'text-white'}`} onClick={() => toggleCategory('Overlays')}>Overlays</label>
+                    <label className={`block cursor-pointer ${category === 'Banners' ? 'text-orange-500' : 'text-white'}`} onClick={() => toggleCategory('Banners')}>Banners</label>
+                    <label className={`block cursor-pointer ${category === 'Alerts' ? 'text-orange-500' : 'text-white'}`} onClick={() => toggleCategory('Alerts')}>Alerts</label>
+                    <label className={`block cursor-pointer ${category === 'Backgrounds' ? 'text-orange-500' : 'text-white'}`} onClick={() => toggleCategory('Backgrounds')}>Backgrounds</label>
+                    <label className={`block cursor-pointer ${category === 'Transitions' ? 'text-orange-500' : 'text-white'}`} onClick={() => toggleCategory('Transitions')}>Transitions</label>
+                    <label className={`block cursor-pointer ${category === 'Bundle' ? 'text-orange-500' : 'text-white'}`} onClick={() => toggleCategory('Bundle')}>Bundle</label>
+                    <label className={`block cursor-pointer ${category === 'Elements' ? 'text-orange-500' : 'text-white'}`} onClick={() => toggleCategory('Elements')}>Elements</label>
                 </div>
+            </div>
+            <div>                    
+                <h3 className="text-xl font-extrabold text-orange-500 text-center">Rating</h3>
+                <div className="p-4 bg-viz-green border border-[#82AAB9] space-y-2">
+                    <label className={`block cursor-pointer ${rating === '5' ? 'text-orange-500' : 'text-white'}`} onClick={() => toggleRating('5')}>5</label>
+                    <label className={`block cursor-pointer ${rating === '4' ? 'text-orange-500' : 'text-white'}`} onClick={() => toggleRating('4')}>4</label>
+                    <label className={`block cursor-pointer ${rating === '3' ? 'text-orange-500' : 'text-white'}`} onClick={() => toggleRating('3')}>3</label>
+                    <label className={`block cursor-pointer ${rating === '2' ? 'text-orange-500' : 'text-white'}`} onClick={() => toggleRating('2')}>2</label>
+                    <label className={`block cursor-pointer ${rating === '1' ? 'text-orange-500' : 'text-white'}`} onClick={() => toggleRating('1')}>1</label>
+                    <label className={`block cursor-pointer ${rating === '0' ? 'text-orange-500' : 'text-white'}`} onClick={() => toggleRating('0')}>0</label>
+                </div>
+            </div>
             <div>                    
                 <h3 className="text-xl font-extrabold text-orange-500 text-center">Color</h3>
                 <div className="p-4 bg-viz-green border border-[#82AAB9] space-y-2">
