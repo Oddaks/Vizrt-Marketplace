@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       backgroundColor: {
         'viz-blue': '#1D363F',
+        'viz-dark-blue': '#1A2C33',
         'viz-orange': '#EF804E',
         'viz-green': '#1E3541'
       },
