@@ -1,92 +1,113 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Imports the FontAwesomeIcon component
-import { faMagnifyingGlass, faBars, faShoppingCart, faUserCircle, faSignOut, faTableCellsLarge } from '@fortawesome/free-solid-svg-icons'; // Imports the icons used in the header
-import { useState } from 'react'; // Imports the useState hook
-import logo from '../logo.png'; // Imports Vizrt logo
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass, faBars, faShoppingCart, faUserCircle, faSignOut, faTableCellsLarge } from '@fortawesome/free-solid-svg-icons';
+import { useState, useRef, useEffect } from 'react';
+import logo from '../logo.png';
 
-
-// The Header component represents the navigation bar of the application
 const Header = () => {
-// State to manage the visibility of the dropdown menu
-const [showMenu, setShowMenu] = useState(false);
-// State to manage the visibility of the search icon
-const [showSearch, setShowSearch] = useState(false);
+    // Define state variables
+    const [showSearch, setShowSearch] = useState(false);
+    const [showMenu, setShowMenu] = useState(false);
 
+    // Reference for the dropdown menu
+    const dropdownRef = useRef(null);
 
-return (
-    <header className="navbar bg-white text-black p-2 relative max-w-full h-[100px] flex items-center">
-        {/* Logo positioned at the top left corner */}
-        <div className="logo absolute top left-[8px] h-[7em] w-[7em]">
-        <img src={logo} alt="Logo" />
-        </div>
-        <nav className="flex-1">
-            <ul className="nav-links list-none m-0 p-0 flex justify-end items-center">
-                {/* Search bar container */}
-                <li className="mr-11"> 
-                    <div className="searchbar w-[232px] h-[40px] flex overflow-hidden items-center border border-orange-500 bg-transparent">
-                        <div className="search-bar-container flex items-center w-full">
-                            {/* Input field for search functionality */}
-                            <input
-                                type="text"
-                                className="search-bar border-none p-1 w-full"
-                                placeholder="Search..."
-                                onFocus={() => setShowSearch(true)} // Show the search icon on focus
-                                onBlur={() => setShowSearch(false)} // Hide the search icon on blur
-                            />
-                            {/* Search icon, shown only when not focused on the input */}
-                                {!showSearch && (
-                                <FontAwesomeIcon
-                                icon={faMagnifyingGlass}
-                                className="search-icon -ml-6" 
+    // Handle clicks outside the dropdown menu
+    const handleClickOutside = (event) => {
+        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+            setShowMenu(false);
+        }
+    };
+
+    useEffect(() => {
+        if (showMenu) {
+            document.addEventListener('mousedown', handleClickOutside);
+        } else {
+            document.removeEventListener('mousedown', handleClickOutside);
+        }
+
+        // Cleanup the event listener on component unmount
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [showMenu]);
+
+    return (
+        <header className="navbar bg-white text-black p-2 relative max-w-full h-[100px] flex items-center">
+            <div className="logo absolute top left-[8px] h-[7em] w-[7em]">
+                {/* Logo image and onclick that leads to landing page */}
+                <button onClick={() => { window.location.href = '/'; }}>
+                    <img src={logo} alt="Logo" />
+                </button>
+            </div>
+            <nav className="flex-1">
+                <ul className="nav-links list-none m-0 p-0 flex justify-end items-center">
+                    <li className="mr-11">
+                        <div className="searchbar w-[232px] h-[40px] flex overflow-hidden items-center border border-orange-500 bg-transparent">
+                            <div className="search-bar-container flex items-center w-full">
+                                {/* Input field for search functionality */}
+                                <input
+                                    type="text"
+                                    className="search-bar border-none p-1 w-full"
+                                    placeholder="Search..."
+                                    onFocus={() => setShowSearch(true)} // Show the search icon on focus
+                                    onBlur={() => setShowSearch(false)} // Hide the search icon on blur
                                 />
-                            )}
+                                {/* Search icon, shown only when not focused on the input */}
+                                {!showSearch && (
+                                    <FontAwesomeIcon
+                                        icon={faMagnifyingGlass}
+                                        className="search-icon -ml-6"
+                                    />
+                                )}
                             </div>
                         </div>
-            </li>
-                {/* Shopping cart button */}
-            <li className="shopping-cart w-[15] h-[15] mr-8 flex items-center"> 
-                <button className="cart-button">
-                    <FontAwesomeIcon icon={faShoppingCart} />
-                </button>
-            </li>
-                {/* Dropdown menu button */}
-            <li className="dropdown relative w-[20] h-[20] flex items-center">
-               <button
-                    onClick={() => setShowMenu(!showMenu)} // Toggle the dropdown menu on button click
-                    className="dropdown-button text-black p-1 no-underline"
-                >
-                   <FontAwesomeIcon icon={faBars} />
-                       {showMenu}
-                </button>
-                {/* Dropdown menu items */}
-                    {showMenu && (
-                            <div className="dropdown-menu bg-[#1A2C33] border border-[#F1834B] p-2 absolute z-10 mt-2 w-48" style={{ top: "182%", right: "-25%" }}>
-                                <a href="#" className="block p-1 text-[#F1834B] border-b border-[#F1834B] last:border-0">
+                    </li>
+                    {/* Shopping cart button */}
+                    <li className="shopping-cart mr-8 flex items-center">
+                        <button className="cart-button">
+                            <FontAwesomeIcon icon={faShoppingCart} style={{ fontSize: '30px' }} />
+                        </button>
+                    </li>
+                    {/* Dropdown menu button */}
+                    <li className="dropdown relative flex items-center">
+                        <button
+                            onClick={() => setShowMenu(!showMenu)} // Toggle the dropdown menu on button click
+                            className="dropdown-button text-black p-1 no-underline">
+                            <FontAwesomeIcon icon={faBars} 
+                            style={{ fontSize: '30px' }} />
+                            {showMenu}
+                        </button>
+                        {/* Dropdown menu items */}
+                        {showMenu && (
+                            <div ref={dropdownRef} className="dropdown-menu bg-[#1A2C33] border border-[#F1834B] absolute z-10 mt-2 w-64 h-64" 
+                            style={{ top: "182%", right: "-25%" }}>
+                                <a href="#" className="block p-7 text-[#F1834B] border-b border-[#F1834B] text-lg last:border-0">
                                     <FontAwesomeIcon
                                         icon={faUserCircle}
-                                        className="mr-2"
+                                        className="mr-2 w-6 h-6"
                                     />{" "}
                                     My profile
                                 </a>
-                                <a href="#" className="block p-1 text-[#F1834B] border-b border-[#F1834B] last:border-0">
+                                <a href="#" className="block p-7 text-[#F1834B] border-b border-[#F1834B] text-lg last:border-0">
                                     <FontAwesomeIcon
                                         icon={faTableCellsLarge}
-                                        className="mr-2"
+                                        className="mr-2 w-6 h-6"
                                     />{" "}
                                     Dashboard
                                 </a>
-                                <a href="#" className="block p-1 text-[#F1834B]">
+                                <a href="#" className="block p-7 text-[#F1834B] border-b border-[#F1834B] text-lg last:border-0">
                                     <FontAwesomeIcon
                                         icon={faSignOut}
-                                        className="mr-2"
+                                        className="mr-2 w-6 h-6"
                                     />{" "}
                                     Sign Out
                                 </a>
                             </div>
-                )}
-            </li>
-            </ul>
-        </nav>
-    </header>
+                        )}
+                    </li>
+                </ul>
+            </nav>
+        </header>
     );
 };
 

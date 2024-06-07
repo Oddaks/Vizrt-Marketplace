@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import FilterMenu from "../components/FilterMenu";
 import productsArray from "../Tools/ProductArray.json";
+import BackButton from "../components/BackButton";
 
 const StorePage = () => {
     const [category, setCategory] = useState("");
@@ -36,7 +37,9 @@ const StorePage = () => {
 
     return (
         <div className="min-h-screen bg-viz-blue">
-            <div className='p-6'>tbd</div>
+            <div className='p-6'>
+                <BackButton />
+            </div>
             <div className="grid grid-cols-4 gap-4 p-4">
                 <FilterMenu
                     category={category} setCategory={setCategory}
