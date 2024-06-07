@@ -49,13 +49,12 @@ const StorePage = () => {
                     color={color} setColor={setColor}
                     filterProducts={filterProducts}
                 />
-                <section className=" text-white col-span-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+                <section className="col-span-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
                     {filteredProducts.map(product => (
-                        
-                        <article key={product.id} className="border p-4 bg-viz-dark-blue shadow-md">
-                            <p>By {product.creator}</p>
+                        <article key={product.id} className="border p-4 bg-white shadow-md">
                             <img src={product.image} alt={product.title} className="w-full h-40 object-cover mb-2" />
-                            <h3 className="text-lg text-white font-semibold">{product.title}</h3>
+                            <h3 className="text-lg font-semibold">{product.title}</h3>
+                            <p>Creator: {product.creator}</p>
                             <p>Rating: {product.rating.rate} ({product.rating.count})</p>
                             <p>Price: {product.price} Kr</p>
                         </article>
