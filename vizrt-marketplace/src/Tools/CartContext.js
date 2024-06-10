@@ -1,5 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
+//addding to and removing from local storage
+
 const CartContext = createContext();
 
 export const useCart = () => useContext(CartContext);
@@ -22,9 +24,14 @@ export const CartProvider = ({ children }) => {
         setCart((prevCart) => prevCart.filter(product => product.id !== productId));
     };
 
+    const removeAllFromCart = ()=>{
+        setCart([])
+        localStorage.removeItem('cart')
+    }
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+        <CartContext.Provider value={{ cart, addToCart, removeFromCart, removeAllFromCart }}>
             {children}
         </CartContext.Provider>
     );
+
 };
