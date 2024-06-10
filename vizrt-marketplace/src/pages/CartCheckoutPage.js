@@ -11,14 +11,14 @@ const CartCheckoutPage = () => {
 
     return (
         <div className="min-h-screen bg-viz-blue text-white grid place-items-center">
-            <div className="w-full max-w-4xl p-4 bg-viz-dark-blue rounded-lg shadow-lg grid grid-cols-3 gap-4">
+            <div className="w-full max-w-4xl p-4 bg-viz-dark-blue rounded-lg border border-[#82AAB9] border-solid shadow-lg grid grid-cols-3 gap-4">
                 <div className="col-span-2">
                     <h2 className="text-3xl font-bold mb-6">Cart Checkout</h2>
                     {cart.length === 0 ? (
                         <p>Your cart is empty</p>
                     ) : (
                         <div className="grid gap-4">
-                            <ul className="divide-y divide-gray-600">
+                            <ul className="divide-y divide-[#82AAB9]">
                                 {cart.map((product) => (
                                     <li key={product.id} className="grid grid-cols-[1fr_auto] items-center p-4">
                                         <div className="grid grid-cols-2">
