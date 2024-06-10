@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import FilterMenu from "../components/FilterMenu";
 import productsArray from "../Tools/ProductArray.json";
 import BackButton from "../components/BackButton";
-import ProductCard from "../components/ProductCard";  // Import the new ProductCard component
+import ProductCard from "../components/ProductCard";  
 
 const StorePage = () => {
     const [category, setCategory] = useState("");
@@ -50,11 +50,8 @@ const StorePage = () => {
                     color={color} setColor={setColor}
                     filterProducts={filterProducts}
                 />
-<<<<<<< Updated upstream
                 <section className="col-span-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-=======
                 <section className="p-2 auto-rows-min col-span-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 place-items-start">
->>>>>>> Stashed changes
                     {filteredProducts.map(product => (
                         <ProductCard key={product.id} product={product} />
                     ))}
