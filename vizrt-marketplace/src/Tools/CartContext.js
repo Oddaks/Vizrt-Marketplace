@@ -1,5 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
+//addding to and removing from local storage
+
 const CartContext = createContext();
 
 export const useCart = () => useContext(CartContext);

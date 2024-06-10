@@ -7,8 +7,6 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 const CartCheckoutPage = () => {
     const { cart, removeFromCart, removeAllFromCart } = useCart();
 
-    console.log('CartCheckoutPage - Cart:', cart);
-
     const total = cart.reduce((sum, item) => sum + item.price, 0).toLocaleString();
 
     return (
