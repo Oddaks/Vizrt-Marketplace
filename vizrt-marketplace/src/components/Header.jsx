@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faBars, faShoppingCart, faUserCircle, faSignOut, faTableCellsLarge } from '@fortawesome/free-solid-svg-icons';
 import { useState, useRef, useEffect } from 'react';
 import logo from '../logo.png';
+import { Link } from "react-router-dom";
 
 const Header = () => {
     // Define state variables
@@ -65,9 +66,11 @@ const Header = () => {
                     </li>
                     {/* Shopping cart button */}
                     <li className="shopping-cart mr-8 flex items-center">
-                        <button className="cart-button">
-                            <FontAwesomeIcon icon={faShoppingCart} style={{ fontSize: '30px' }} />
-                        </button>
+                        <Link to ="/CartCheckoutPage"> 
+                            <button className="cart-button">
+                                <FontAwesomeIcon icon={faShoppingCart} style={{ fontSize: '30px' }} />
+                            </button>
+                        </Link> 
                     </li>
                     {/* Dropdown menu button */}
                     <li className="dropdown relative flex items-center">
