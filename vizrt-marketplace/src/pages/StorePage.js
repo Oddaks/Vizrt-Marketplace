@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import FilterMenu from "../components/FilterMenu";
 import productsArray from "../Tools/ProductArray.json";
 import BackButton from "../components/BackButton";
+import ProductCard from "../components/ProductCard";  // Import the new ProductCard component
 
 const StorePage = () => {
     const [category, setCategory] = useState("");
@@ -29,14 +30,14 @@ const StorePage = () => {
         });
 
         setFilteredProducts(chosenProducts);
-    }
+    };
 
     useEffect(() => {
         filterProducts();
     }, [category, verifiedUser, rating, price, color]);
 
     return (
-        <div className="min-h-screen bg-viz-blue">
+        <div className="min-h-screen bg-viz-green">
             <div className='p-6'>
                 <BackButton />
             </div>
@@ -51,13 +52,7 @@ const StorePage = () => {
                 />
                 <section className="col-span-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
                     {filteredProducts.map(product => (
-                        <article key={product.id} className="border p-4 bg-white shadow-md">
-                            <img src={product.image} alt={product.title} className="w-full h-40 object-cover mb-2" />
-                            <h3 className="text-lg font-semibold">{product.title}</h3>
-                            <p>Creator: {product.creator}</p>
-                            <p>Rating: {product.rating.rate} ({product.rating.count})</p>
-                            <p>Price: {product.price} Kr</p>
-                        </article>
+                        <ProductCard key={product.id} product={product} />
                     ))}
                 </section>
             </div>
