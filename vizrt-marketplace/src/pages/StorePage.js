@@ -50,7 +50,7 @@ const StorePage = () => {
                     color={color} setColor={setColor}
                     filterProducts={filterProducts}
                 />
-                <section className="col-span-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <section className="p-2 auto-rows-min col-span-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 place-items-start">
                     {filteredProducts.map(product => (
                         <ProductCard key={product.id} product={product} />
                     ))}
