@@ -82,14 +82,14 @@ const Header = () => {
                         {/* Dropdown menu items */}
                         {showMenu && (
                             <div ref={dropdownRef} className="dropdown-menu bg-[#1A2C33] border border-[#F1834B] absolute z-10 mt-2 w-64 h-64" style={{ top: "182%", right: "-25%" }}>
-                                <a href="/#" className="block p-7 text-[#F1834B] border-b border-[#F1834B] text-lg last:border-0">
+                                <a href="#" className="block p-7 text-[#F1834B] border-b border-[#F1834B] text-lg last:border-0">
                                     <FontAwesomeIcon
                                         icon={faUserCircle}
                                         className="mr-2 w-6 h-6"
                                     />{" "}
                                     My profile
                                 </a>
-                                <a href="/#" className="block p-7 text-[#F1834B] border-b border-[#F1834B] text-lg last:border-0">
+                                <a href="/Dashboard" className="block p-7 text-[#F1834B] border-b border-[#F1834B] text-lg last:border-0">
                                     <FontAwesomeIcon
                                         icon={faTableCellsLarge}
                                         className="mr-2 w-6 h-6"
