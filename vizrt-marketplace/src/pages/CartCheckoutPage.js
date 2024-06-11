@@ -1,13 +1,18 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useCart } from '../Tools/CartContext';
+import { useOrder } from '../Tools/OrderContext'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
-
+import BackButton from '../components/BackButton';
 
 const CartCheckoutPage = () => {
     const { cart, removeFromCart, removeAllFromCart } = useCart();
+    const { addOrder } = useOrder();
 
     const total = cart.reduce((sum, item) => sum + item.price, 0).toLocaleString();
+
+    const navigate = useNavigate();
 
     const handleRemoveCart = (productId) => {
         removeFromCart(productId);
@@ -15,8 +20,14 @@ const CartCheckoutPage = () => {
 
     const handleRemoveAllCart = () => {
         removeAllFromCart();
+    };  //Checks if there is items with the key 'cart' in local storage
+
+    const handlePurchase = () => {
+        addOrder(cart);
+        removeAllFromCart();
+        navigate('/OrderPage'); // Redirects to OrderPage after purchase
     };
-    //Checks if there is items with the key 'cart' in local storage
+
     return (
         <div className="min-h-screen bg-viz-blue text-white grid place-items-center">
             <div className="  w-3/4 p-4 bg-viz-dark-blue rounded-lg border border-[#82AAB9] border-solid shadow-lg grid grid-cols-3 gap-4">

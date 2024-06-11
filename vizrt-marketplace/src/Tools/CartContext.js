@@ -24,12 +24,12 @@ export const CartProvider = ({ children }) => {
     //Checks if there is another product in the local storage with the same id
     const addToCart = (product) => {
         setCart((prevCart) => {
-            const excistingProduct = prevCart.find(item => item.id === product.id);
-            if(excistingProduct){
+            const existingProduct = prevCart.find(item => item.id === product.id);
+            if (existingProduct) {
                 return prevCart;
-            } else{
-                return [...prevCart, { ...product, quantity: 1}];
-            } 
+            } else {
+                return [...prevCart, { ...product, quantity: 1 }];
+            }
         });
     }
 
@@ -37,9 +37,9 @@ export const CartProvider = ({ children }) => {
         setCart((prevCart) => prevCart.filter(product => product.id !== productId));
     };
 
-    const removeAllFromCart = ()=>{
-        setCart([])
-        localStorage.removeItem('cart')
+    const removeAllFromCart = () => {
+        setCart([]);
+        localStorage.removeItem('cart');
     }
     return (
         <CartContext.Provider value={{ cart, addToCart, removeFromCart, removeAllFromCart }}>
