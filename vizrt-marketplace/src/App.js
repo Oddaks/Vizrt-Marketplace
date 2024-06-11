@@ -12,17 +12,18 @@ function App() {
   return (
     <div>
         <BrowserRouter>
-          <CartProvider>
-            <nav>
-              <Header />
-            </nav>
-            <Routes>
-              <Route path="/" element={<LandingPage />} />
-              <Route path="StorePage" element={<StorePage />} />
-              <Route path="ProductPage" element={<ProductPage />} />
-              <Route path="CartCheckoutPage" element={<CartCheckoutPage />} />
-            </Routes>
-            <Footer />
+        <CartProvider>
+          <nav>
+            <Header />
+          </nav>
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="StorePage" element={<StorePage />} />
+            <Route path="ProductPage" element={<ProductPage />} />
+            <Route path="CartCheckoutPage" element={<CartCheckoutPage />} />
+            <Route path="ProductPage/:productId" element={<ProductPage />} />
+          </Routes>
+          <Footer />
           </CartProvider>
         </BrowserRouter>
     </div>
