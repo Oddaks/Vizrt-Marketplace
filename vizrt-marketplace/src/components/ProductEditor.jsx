@@ -3,16 +3,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import RatingStar from "./RatingStar";
 import { Link } from "react-router-dom";
+import { products } from "../components/ProductCard";
 
-const ProductEditor = ({ product }) => {
-  product = {
+const ProductEditor = () => {
+  //! Doing this for now, needs to be replaced with productcard
+  const product = {
     title: "Gamer Bundle",
     description:
       "This Gamer bundle includes overlays, banners and other assets for streamers.",
-    reviews: 15000,
-    likes: 65000,
-    color: "white",
-    image: "https://placehold.co/600x400", // Placeholder image link
+    image: "https://placehold.co/1000x700", // Placeholder image link
   };
 
   return (
@@ -21,11 +20,12 @@ const ProductEditor = ({ product }) => {
 
       <div className="flex mt-4">
         {/* Product image placeholder */}
+        {/* //! it's not responsive  */}
         <div className="flex-shrink-0">
           <img
             src={product.image}
             alt="Product"
-            className="w-64 h-64 object-cover rounded"
+            className="object-cover rounded flex item-center"
           ></img>
         </div>
       </div>
