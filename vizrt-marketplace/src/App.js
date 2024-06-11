@@ -11,20 +11,20 @@ import { CartProvider } from '../src/Tools/CartContext';
 function App() {
   return (
     <div>
-      <CartProvider>
         <BrowserRouter>
-          <nav>
-            <Header />
-          </nav>
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="StorePage" element={<StorePage />} />
-            <Route path="ProductPage" element={<ProductPage />} />
-            <Route path="CartCheckoutPage" element={<CartCheckoutPage />} />
-          </Routes>
-          <Footer />
+          <CartProvider>
+            <nav>
+              <Header />
+            </nav>
+            <Routes>
+              <Route path="/" element={<LandingPage />} />
+              <Route path="StorePage" element={<StorePage />} />
+              <Route path="ProductPage" element={<ProductPage />} />
+              <Route path="CartCheckoutPage" element={<CartCheckoutPage />} />
+            </Routes>
+            <Footer />
+          </CartProvider>
         </BrowserRouter>
-      </CartProvider>
     </div>
   );
 }
