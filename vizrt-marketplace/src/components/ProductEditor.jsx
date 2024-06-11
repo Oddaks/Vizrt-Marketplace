@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { products } from "../components/ProductCard";
 
 const ProductEditor = () => {
-  //! Doing this for now, needs to be replaced with productcard
+  //! Doing this for now, needs to be replaced with product card
   const product = {
     title: "Gamer Bundle",
     description:
