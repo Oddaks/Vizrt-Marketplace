@@ -41,7 +41,7 @@ const StorePage = () => {
             <div className='p-6'>
                 <BackButton />
             </div>
-            <div className="grid grid-cols-4 gap-4 p-4">
+            <div className=" grid grid-cols-4 gap-4 p-4">
                 <FilterMenu
                     category={category} setCategory={setCategory}
                     verifiedUser={verifiedUser} setVerifiedUser={setVerifiedUser}
@@ -50,7 +50,7 @@ const StorePage = () => {
                     color={color} setColor={setColor}
                     filterProducts={filterProducts}
                 />
-                <section className="p-2 auto-rows-min col-span-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 place-items-start">                    
+                <section className=" overflow-auto bg-blue-500 p-2 auto-rows-min col-span-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3 place-items-start">                    
                     {filteredProducts.map(product => (
                         <ProductCard key={product.id} product={product} />
                     ))}
