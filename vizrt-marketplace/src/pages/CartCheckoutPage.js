@@ -16,10 +16,6 @@ const CartCheckoutPage = () => {
         removeFromCart(productId);
     };
 
-    const handleRemoveAllCart = () => {
-        removeAllFromCart();
-    };
-
     const handlePurchase = () => {
         addOrder(cart);
         removeAllFromCart();
