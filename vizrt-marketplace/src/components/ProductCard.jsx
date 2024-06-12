@@ -64,7 +64,7 @@ const ProductCard = ({ product }) => {
                     <p className="text-gray-400 text-xs">({product.rating.count})</p>
                 </div>
                 <div className="flex justify-between items-center mt-2">
-                    <p className="text-sm text-gray-400">{product.price} Kr</p>
+                    <p className="text-sm text-white">{product.price} Kr</p>
 
                     <button onClick={toggleDropdown} className="text-white">
                         <FontAwesomeIcon icon={faBars} />
