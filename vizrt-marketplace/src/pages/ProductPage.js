@@ -32,11 +32,6 @@ const ProductPage = () => {
                 <ProductInfo product={product} />
 
             </div>
-            <div className="color">
-                <p className="select-color b">
-                    Select Color
-                </p>
-            </div>
         </div>
     );
 };

@@ -46,6 +46,7 @@ const Header = () => {
                     <li className="mr-11">
                         <div className="searchbar w-[232px] h-[40px] flex overflow-hidden items-center border border-orange-500 bg-transparent">
                             <div className="search-bar-container flex items-center w-full">
+                            <label htmlFor="search-bar" className="sr-only">Search</label>
                                 {/* Input field for search functionality */}
                                 <input
                                     type="text"
@@ -89,7 +90,7 @@ const Header = () => {
                                     />{" "}
                                     My profile
                                 </a>
-                                <a href="/Dashboard" className="block p-7 text-[#F1834B] border-b border-[#F1834B] text-lg last:border-0">
+                                <a href="#" className="block p-7 text-[#F1834B] border-b border-[#F1834B] text-lg last:border-0">
                                     <FontAwesomeIcon
                                         icon={faTableCellsLarge}
                                         className="mr-2 w-6 h-6"
@@ -101,7 +102,7 @@ const Header = () => {
                                         icon={faSignOut}
                                         className="mr-2 w-6 h-6"
                                     />{" "}
-                                    Sign Out
+                                    Sign Out 
                                 </a>
                             </div>
                         )}
