@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingCart, faStar } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import BundleImages from "./BundleImages";
 
@@ -21,10 +21,10 @@ const ProductEditor = () => {
   ];
 
   return (
-    <div className="bg-viz-blue min-h-screen p-6 flex flex-col">
-      <div className="max-w-7xl mx-auto p-4 rounded-lg flex h-full">
+    <div className="bg-viz-blue min-h-screen p-6 flex">
+      <div className="max-w-7xl mx-auto flex w-full h-full ">
         {/* Left side with main main image and bundle images */}
-        <div className="w-2/3 pr-4">
+        <div className="w-2/3 pr-4 border-r border-white">
           {/* Product image placeholder */}
           <div className="mb-4">
             <img
@@ -40,33 +40,42 @@ const ProductEditor = () => {
               <BundleImages
                 images={placeholderImages}
                 className="flex flex-col items-center"
-              ></BundleImages>
+              />
             </div>
           </div>
         </div>
         {/* Right side with vertical line and 3 sections */}
-        <div className="w-1/3 pl-4 border-l border-red-600">
-          <div className="flex flex-col h-full justify-between">
-            <div className="flex-1 p-4 border-b-red-600">
-              <p className="text-white"> Section 1</p>
-            </div>
-            <div className="flex-1 p-4 border-t border-red-600">
-              <p className="text-white"> Section 2</p>
-            </div>
-            <div className="flex-1 p-4 border-t border-red-600">
-              <p className="text-white">Section 3</p>
-            </div>
+        <div className="w-1/3 pl-4 flex flex-col justify-between">
+          <div className="flex-1 p-4 border-b border-white">
+            <p className="text-white font-bold"> Gamer Bundle</p>
+            <p className="text-white">
+              This Gamer bundle it is simply dummy text of the printing and
+              typesetting industry. Lorem Ipsum has been the industry's standard
+              dummy text ever since the 1500s, when an unknown printer took a
+            </p>
+            <span className="text-white text-xs font-bold">
+              Reviews:
+              <FontAwesomeIcon icon={faStar} />
+            </span>
+          </div>
+          <div className="flex-1 p-4 border-b border-white">
+            <p className="text-white font-bold">Font</p>
+          </div>
+          <div className="flex-1 p-4">
+            <p className="text-white font-bold">Colors</p>
+            <p className="text-white">Select a color sample</p>
+          </div>
+
+          {/* Linking to Checkout Cart page */}
+          <div className="flex justify-center mt-4">
+            <Link to="/CartCheckoutPage">
+              <button className=" bg-viz-orange text-white text-1xl p-4 rounded flex items-center space-x-2 hover:bg-orange-600">
+                <span>Add to Cart</span>
+                <FontAwesomeIcon icon={faShoppingCart} />
+              </button>
+            </Link>
           </div>
         </div>
-      </div>
-      {/* Linking to Checkout Cart page */}
-      <div className="flex justify-end mt-4">
-        <Link to="/CartCheckoutPage">
-          <button className=" bg-viz-orange text-white text-1xl p-4 rounded flex items-center space-x-2 hover:bg-orange-600">
-            <span>Add to Cart</span>
-            <FontAwesomeIcon icon={faShoppingCart} />
-          </button>
-        </Link>
       </div>
     </div>
   );
