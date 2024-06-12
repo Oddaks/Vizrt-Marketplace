@@ -81,7 +81,7 @@ const Header = () => {
                         </button>
                         {/* Dropdown menu items */}
                         {showMenu && (
-                            <div ref={dropdownRef} className="dropdown-menu bg-[#1A2C33] border border-[#F1834B] absolute z-10 mt-2 w-64 h-64" style={{ top: "182%", right: "-25%" }}>
+                            <div ref={dropdownRef} className="dropdown-menu bg-[#1A2C33] border border-[#F1834B] absolute z-10 mt-2 w-64 h-64" style={{ top: "153%", right: "-25%" }}>
                                 <a href="#" className="block p-7 text-[#F1834B] border-b border-[#F1834B] text-lg last:border-0">
                                     <FontAwesomeIcon
                                         icon={faUserCircle}
