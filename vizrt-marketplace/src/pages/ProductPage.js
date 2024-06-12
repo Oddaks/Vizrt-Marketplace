@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import BackButton from "../components/BackButton";
 import { useParams } from 'react-router-dom';
-import ProductInfo from '../components/ProductInfo'; 
-import productsArray from '../Tools/ProductArray.json'; 
-
+import BackButton from "../components/BackButton";
+import productsArray from '../Tools/ProductArray.json';
+import ProductEditor from "../components/ProductEditor";
+import ProductInfo from '../components/ProductInfo';
 
 const ProductPage = () => {
     const { productId } = useParams();
@@ -18,10 +18,15 @@ const ProductPage = () => {
         fetchProduct();
     }, [productId]);
 
+    if (!product) {
+        return <div>Loading...</div>;
+    }
+
     return (
         <div className="min-h-screen bg-viz-green">
             <div className='p-6'>
                 <BackButton />
+                <ProductEditor product={product} onProductUpdate={(updatedProduct) => setProduct(updatedProduct)} />
             </div>
             <div className="grid grid-cols-1 p-4">
                 <ProductInfo product={product} />
