@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import ProductInfo from '../components/ProductInfo'; 
 import productsArray from '../Tools/ProductArray.json'; 
 
+
 const ProductPage = () => {
     const { productId } = useParams();
     const [product, setProduct] = useState(null);
@@ -24,6 +25,12 @@ const ProductPage = () => {
             </div>
             <div className="grid grid-cols-1 p-4">
                 <ProductInfo product={product} />
+
+            </div>
+            <div className="color">
+                <p className="select-color b">
+                    Select Color
+                </p>
             </div>
         </div>
     );
