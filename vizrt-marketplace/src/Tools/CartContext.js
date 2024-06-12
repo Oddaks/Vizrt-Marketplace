@@ -7,6 +7,9 @@ const CartContext = createContext();
 export const useCart = () => useContext(CartContext);
 
 //Defines a CartProvider component using Context, and initalizes its state with the cart items retrieved from localStorage or an empty array if there are none.
+//https://www.youtube.com/watch?v=shLz_kmA68Q (10.06.24) (How to persist the shopping cart state to local storage by Web Dev Cody)
+//https://www.youtube.com/watch?v=02ieJ1YXZM4 (10.06.24) (Live Coding a Shopping Cart using React by Web Dev Cody)
+
 export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState(() => {
         const savedCart = JSON.parse(localStorage.getItem('cart'));

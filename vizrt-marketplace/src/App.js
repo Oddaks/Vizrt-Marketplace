@@ -11,8 +11,8 @@ import { CartProvider } from '../src/Tools/CartContext';
 function App() {
   return (
     <div>
-      <CartProvider>
         <BrowserRouter>
+        <CartProvider>
           <nav>
             <Header />
           </nav>
@@ -21,10 +21,11 @@ function App() {
             <Route path="StorePage" element={<StorePage />} />
             <Route path="ProductPage" element={<ProductPage />} />
             <Route path="CartCheckoutPage" element={<CartCheckoutPage />} />
+            <Route path="ProductPage/:productId" element={<ProductPage />} />
           </Routes>
           <Footer />
+          </CartProvider>
         </BrowserRouter>
-      </CartProvider>
     </div>
   );
 }

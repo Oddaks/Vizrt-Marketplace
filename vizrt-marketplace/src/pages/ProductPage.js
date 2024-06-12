@@ -1,33 +1,41 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from 'react';
 import BackButton from "../components/BackButton";
+import { useParams } from 'react-router-dom';
+import ProductDetail from '../components/ProductInfo'; 
+import productsArray from '../Tools/ProductArray.json'; 
 import ProductEditor from "../components/ProductEditor";
-import ProductCard from "../components/ProductCard";
 
-//! Do i need this???
-//  const ProductCard = ({ product }) => {
-//      const { addToCart } = useCart();
-//      const handleAddToCart = () => {
-//          addToCart(product);
-//     };
-//  };
+const ProductPage = () => {
+    const { productId } = useParams();
+    const [product, setProduct] = useState(null);
 
+    useEffect(() => {
+        const fetchProduct = () => {
+            const productData = productsArray.find(p => p.id === parseInt(productId));
+            setProduct(productData);
+        };
 
-const ProductPage = (product) => {
+        fetchProduct();
+    }, [productId]);
+  
+  const ProductPage = (product) => {
     const [selectedProduct, setSelectedProduct] = useState(product[0]);
 
     const handleProductClick = (product) => {
         setSelectedProduct(product)
-    }
+
     return (
-        <div className="bg-viz-blue">
+        <div className="min-h-screen bg-viz-green">
             <div className='p-6'>
                 <BackButton />
                 <ProductEditor />
 
             </div>
-            <p className="text-white">Hello I am a product</p>
-
+            <div className="grid grid-cols-1 p-4">
+                <ProductDetail product={product} />
+            </div>
         </div>
-    )
-}
-export default ProductPage
+    );
+};
+
+export default ProductPage;
