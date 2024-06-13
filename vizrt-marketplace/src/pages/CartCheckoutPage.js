@@ -24,7 +24,11 @@ const CartCheckoutPage = () => {
     };
 
     return (
-        <div className="min-h-screen bg-viz-blue text-white grid place-items-center">
+        <div className="min-h-screen bg-viz-blue text-white">
+            <div className="p-6 flex justify-start items-start">
+                <BackButton />
+            </div>
+            <div className="grid place-items-center">
             <div className="w-1/2 p-4 bg-viz-dark-blue rounded-lg border border-[#82AAB9] border-solid shadow-lg grid grid-cols-3 gap-4">
                 <div className="col-span-2">
                     <h2 className="text-3xl font-bold mb-6">Cart Checkout</h2>
@@ -65,6 +69,7 @@ const CartCheckoutPage = () => {
                     </div>
                 )}
             </div>
+        </div>
         </div>
     );
 };
