@@ -1,3 +1,4 @@
+// https://github.com/lakhansolanki1234/New-folder/blob/master/src/component/Text.js, (11.06.2024, HJ)
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -48,7 +49,7 @@ const ProductEditor = ({ product }) => {
     const nextIndex = (currentIndex + direction + colors.length) % colors.length;
     setFrameColor(colors[nextIndex]);
   };
-
+// Left this to be able to change arrow design in the future
   const options = [
     { value: 'Arial', label: 'Arial' },
     { value: 'Helvetica', label: 'Helvetica' },
@@ -84,6 +85,7 @@ const ProductEditor = ({ product }) => {
         </div>
         {/* Right side */}
         <div className="w-1/3 pl-4 flex flex-col">
+          {/* Positioning is not correct right now, should be reviewed for the future */}
           <div className="flex-1 pb-4 border-b border-white">
             <p className="text-white font-bold">{title}</p>
             <p className="text-white">{description}</p>

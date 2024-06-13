@@ -1,3 +1,4 @@
+// https://tailwindcss.com/docs/background-color, (12.06.2024, HJ)
 import React from 'react';
 // Array of colors to be displayed
 const colors = [
