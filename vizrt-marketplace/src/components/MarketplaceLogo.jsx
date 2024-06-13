@@ -22,30 +22,30 @@ const Logo = () => {
                     <div className="mb-7">
                         <FontAwesomeIcon icon={faUserCircle} size="8x"/>
                     </div>
-                    <p>Industry-leading service,<br />Customer satisfaction, and<br />software support</p>
+                    <p>Industry-leading service,<br />customer satisfaction, and<br />software support</p>
                 </div>
 
                 {/* Community section */}
                 <div className="flex-1 text-center">
-                    <h1 className="text-3xl mb-1 text-[#F0844E] p-1">A Community driven marketplace</h1>
+                    <h1 className="text-3xl mb-1 text-[#F0844E] p-1">A Community-driven marketplace</h1>
                     <div className='text-white'>
                     <button className="mt-4 px-4 py-2 bg-gradient-to-r from-orange-400 to-red-500 rounded-md">
-                        Join the community
+                        Join the Community
                     </button>
                     </div>
                     <div className="mt-6 text-[#F0844E]">
                         <div className="flex justify-around">
                             <div className="text-center mx-2">
                                 <p className="text-2xl">20 000+</p>
-                                <p>Community members</p>
+                                <p>Community Members</p>
                             </div>
                             <div className="text-center mx-2">
                                 <p className="text-2xl">500 000+</p> 
-                                <p>Uploaded items</p>
+                                <p>Uploaded Items</p>
                             </div>
                             <div className="text-center mx-2">
                                 <p className="text-2xl">$150M</p>
-                                <p>Earned by creators</p>
+                                <p>Earned by Creators</p>
                             </div>
                         </div>
                     </div>

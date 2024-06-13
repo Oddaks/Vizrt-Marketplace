@@ -18,6 +18,7 @@ const ProductPage = () => {
         fetchProduct();
     }, [productId]);
 
+    //async
     if (!product) {
         return <div>Loading...</div>;
     }

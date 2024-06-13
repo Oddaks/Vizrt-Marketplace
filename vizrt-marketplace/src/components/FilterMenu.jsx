@@ -1,4 +1,7 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+
 
 const FilterMenu = ({
   category,
@@ -11,7 +14,6 @@ const FilterMenu = ({
   setPrice,
   color,
   setColor,
-  filterProducts,
 }) => {
   //filter menu toggles
   const toggleVerifiedUser = () => {
@@ -31,7 +33,7 @@ const FilterMenu = ({
   };
 
   return (
-    <div className="col-span-1 p-4 space-y-4">
+    <div className="col-span-1 p- space-y-4">
       <div className="mb-4 flex items-center justify-center">
         <label className="mr-2 text-white text-lg">Verified User:</label>
         <div
@@ -75,7 +77,7 @@ const FilterMenu = ({
         </h3>
         <div className="p-4 bg-viz-green border border-[#82AAB9] space-y-2">
           <label
-            className={`block cursor-pointer ${
+            className={`block cursor-pointer p-2 ${
               category === "Overlays" ? "text-orange-500" : "text-white"
             }`}
             onClick={() => toggleCategory("Overlays")}
@@ -83,7 +85,7 @@ const FilterMenu = ({
             Overlays
           </label>
           <label
-            className={`block cursor-pointer ${
+            className={`block cursor-pointer p-2 ${
               category === "Banners" ? "text-orange-500" : "text-white"
             }`}
             onClick={() => toggleCategory("Banners")}
@@ -91,7 +93,7 @@ const FilterMenu = ({
             Banners
           </label>
           <label
-            className={`block cursor-pointer ${
+            className={`block cursor-pointer p-2 ${
               category === "Alerts" ? "text-orange-500" : "text-white"
             }`}
             onClick={() => toggleCategory("Alerts")}
@@ -99,7 +101,7 @@ const FilterMenu = ({
             Alerts
           </label>
           <label
-            className={`block cursor-pointer ${
+            className={`block cursor-pointer p-2 ${
               category === "Backgrounds" ? "text-orange-500" : "text-white"
             }`}
             onClick={() => toggleCategory("Backgrounds")}
@@ -107,7 +109,7 @@ const FilterMenu = ({
             Backgrounds
           </label>
           <label
-            className={`block cursor-pointer ${
+            className={`block cursor-pointer p-2 ${
               category === "Transitions" ? "text-orange-500" : "text-white"
             }`}
             onClick={() => toggleCategory("Transitions")}
@@ -115,7 +117,7 @@ const FilterMenu = ({
             Transitions
           </label>
           <label
-            className={`block cursor-pointer ${
+            className={`block cursor-pointer p-2 ${
               category === "Bundle" ? "text-orange-500" : "text-white"
             }`}
             onClick={() => toggleCategory("Bundle")}
@@ -123,7 +125,7 @@ const FilterMenu = ({
             Bundle
           </label>
           <label
-            className={`block cursor-pointer ${
+            className={`block cursor-pointer p-2 ${
               category === "Elements" ? "text-orange-500" : "text-white"
             }`}
             onClick={() => toggleCategory("Elements")}
@@ -138,52 +140,55 @@ const FilterMenu = ({
         </h3>
         <div className="p-4 bg-viz-green border border-[#82AAB9] space-y-2">
           <label
-            className={`block cursor-pointer ${
+            className={`block cursor-pointer p-2  ${
               rating === "5" ? "text-orange-500" : "text-white"
             }`}
             onClick={() => toggleRating("5")}
-          >
-            5
+          >         
+            <FontAwesomeIcon icon={faStar} className="" />
+            <FontAwesomeIcon icon={faStar} className="" />
+            <FontAwesomeIcon icon={faStar} className="" />
+            <FontAwesomeIcon icon={faStar} className="" />
+            <FontAwesomeIcon icon={faStar} className="" />
           </label>
           <label
-            className={`block cursor-pointer ${
+            className={`block cursor-pointer p-2 ${
               rating === "4" ? "text-orange-500" : "text-white"
             }`}
             onClick={() => toggleRating("4")}
           >
-            4
+            <FontAwesomeIcon icon={faStar} className="" />
+            <FontAwesomeIcon icon={faStar} className="" />
+            <FontAwesomeIcon icon={faStar} className="" />
+            <FontAwesomeIcon icon={faStar} className="" />
           </label>
           <label
-            className={`block cursor-pointer ${
+            className={`block cursor-pointer p-2 ${
               rating === "3" ? "text-orange-500" : "text-white"
             }`}
             onClick={() => toggleRating("3")}
           >
-            3
+            <FontAwesomeIcon icon={faStar} className="" />
+            <FontAwesomeIcon icon={faStar} className="" />
+            <FontAwesomeIcon icon={faStar} className="" />
           </label>
           <label
-            className={`block cursor-pointer ${
+            className={`block cursor-pointer p-2 ${
               rating === "2" ? "text-orange-500" : "text-white"
             }`}
             onClick={() => toggleRating("2")}
           >
-            2
+            <FontAwesomeIcon icon={faStar} className="" />
+            <FontAwesomeIcon icon={faStar} className="" />
           </label>
           <label
-            className={`block cursor-pointer ${
+            className={`block cursor-pointer p-2 ${
               rating === "1" ? "text-orange-500" : "text-white"
             }`}
             onClick={() => toggleRating("1")}
           >
-            1
-          </label>
-          <label
-            className={`block cursor-pointer ${
-              rating === "0" ? "text-orange-500" : "text-white"
-            }`}
-            onClick={() => toggleRating("0")}
-          >
-            0
+          <FontAwesomeIcon icon={faStar} className="" />
+
           </label>
         </div>
       </div>
@@ -193,7 +198,7 @@ const FilterMenu = ({
         </h3>
         <div className="p-4 bg-viz-green border border-[#82AAB9] space-y-2">
           <label
-            className={`block cursor-pointer ${
+            className={`block cursor-pointer p-2 ${
               color === "Red" ? "text-orange-500" : "text-white"
             }`}
             onClick={() => toggleColor("Red")}
@@ -201,7 +206,7 @@ const FilterMenu = ({
             Red
           </label>
           <label
-            className={`block cursor-pointer ${
+            className={`block cursor-pointer p-2 ${
               color === "White" ? "text-orange-500" : "text-white"
             }`}
             onClick={() => toggleColor("White")}
@@ -209,7 +214,7 @@ const FilterMenu = ({
             White
           </label>
           <label
-            className={`block cursor-pointer ${
+            className={`block cursor-pointer p-2 ${
               color === "Blue" ? "text-orange-500" : "text-white"
             }`}
             onClick={() => toggleColor("Blue")}
@@ -217,7 +222,7 @@ const FilterMenu = ({
             Blue
           </label>
           <label
-            className={`block cursor-pointer ${
+            className={`block cursor-pointer p-2 ${
               color === "Black" ? "text-orange-500" : "text-white"
             }`}
             onClick={() => toggleColor("Black")}
@@ -225,7 +230,7 @@ const FilterMenu = ({
             Black
           </label>
           <label
-            className={`block cursor-pointer ${
+            className={`block cursor-pointer p-2 ${
               color === "Multicolor" ? "text-orange-500" : "text-white"
             }`}
             onClick={() => toggleColor("Multicolor")}
@@ -233,7 +238,7 @@ const FilterMenu = ({
             Multicolor
           </label>
           <label
-            className={`block cursor-pointer ${
+            className={`block cursor-pointer p-2 ${
               color === "Pastel" ? "text-orange-500" : "text-white"
             }`}
             onClick={() => toggleColor("Pastel")}
@@ -241,7 +246,7 @@ const FilterMenu = ({
             Pastel
           </label>
           <label
-            className={`block cursor-pointer ${
+            className={`block cursor-pointer p-2 ${
               color === "Pink" ? "text-orange-500" : "text-white"
             }`}
             onClick={() => toggleColor("Pink")}
@@ -249,7 +254,7 @@ const FilterMenu = ({
             Pink
           </label>
           <label
-            className={`block cursor-pointer ${
+            className={`block cursor-pointer p-2 ${
               color === "Purple" ? "text-orange-500" : "text-white"
             }`}
             onClick={() => toggleColor("Purple")}
@@ -257,7 +262,7 @@ const FilterMenu = ({
             Purple
           </label>
           <label
-            className={`block cursor-pointer ${
+            className={`block cursor-pointer p-2 ${
               color === "Orange" ? "text-orange-500" : "text-white"
             }`}
             onClick={() => toggleColor("Orange")}
@@ -265,7 +270,7 @@ const FilterMenu = ({
             Orange
           </label>
           <label
-            className={`block cursor-pointer ${
+            className={`block cursor-pointer p-2 ${
               color === "Neon" ? "text-orange-500" : "text-white"
             }`}
             onClick={() => toggleColor("Neon")}
