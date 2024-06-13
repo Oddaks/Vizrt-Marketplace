@@ -9,7 +9,7 @@ const OrderPage = () => {
 
     return (
         <div className="min-h-screen bg-viz-blue">
-            <div className="p-6">
+            <div className="p-6 flex justify-start items-start">
                 <BackButton />
             </div>
             <div className="flex justify-center items-center">
