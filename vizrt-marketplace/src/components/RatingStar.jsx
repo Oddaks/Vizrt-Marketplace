@@ -3,10 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faStarHalf, faStar as farStar } from '@fortawesome/free-solid-svg-icons';
 
 const RatingStar = ({ rate }) => {
-    const totalStars = 5;
     let fullStars = Math.floor(rate);
     let halfStar = (rate % 1) >= 0.5 ? 1 : 0;
-    let emptyStars = totalStars - fullStars - halfStar;
 
     return (
         <div className="ratinstar">

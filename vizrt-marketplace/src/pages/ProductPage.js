@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import BackButton from "../components/BackButton";
 import productsArray from '../Tools/ProductArray.json';
 import ProductEditor from "../components/ProductEditor";
-import ProductInfo from '../components/ProductInfo';
 
 const ProductPage = () => {
     const { productId } = useParams();
