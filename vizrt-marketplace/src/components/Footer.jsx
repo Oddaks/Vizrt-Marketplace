@@ -4,7 +4,7 @@ import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 const Footer = () => {
   return (
     <footer className="relative bg-viz-orange">
-      <div className="flex justify-between space-x-4 items-center text-white">
+      <div className="flex justify-between space-x-4 items-center text-black">
         <div className="flex items-center mb-2 mt-2 p-5 text-center">
           <FontAwesomeIcon icon={faCircleCheck} className="mr-2" size="2x" />
           <p className="mx-auto">Trusted By The Best</p>

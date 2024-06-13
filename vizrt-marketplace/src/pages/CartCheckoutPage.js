@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import { useOrder } from '../Tools/OrderContext'; 
+import BackButton from '../components/BackButton';
 
 const CartCheckoutPage = () => {
     const { cart, removeFromCart, removeAllFromCart } = useCart();

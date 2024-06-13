@@ -40,15 +40,7 @@ const FilterMenu = ({
           className="flex items-center relative border border-gray-300 rounded-full overflow-hidden w-24"
           onClick={toggleVerifiedUser}
         >
-          <span
-            className={`text-sm mr-2 cursor-pointer ${
-              verifiedUser === "true"
-                ? "text-green-500 font-bold"
-                : "text-red-500"
-            }`}
-          >
-            No
-          </span>
+          
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-gray-200 via-white to-gray-200" />
           <div className="absolute h-6 w-full flex items-center cursor-pointer">
             <div
