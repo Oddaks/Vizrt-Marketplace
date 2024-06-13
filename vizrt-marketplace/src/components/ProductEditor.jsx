@@ -191,7 +191,7 @@ const ProductEditor = ({ product }) => {
           {/* Checkout Cart link */}
           <div className="flex justify-center mt-4">
             <Link to="/CartCheckoutPage">
-              <button className="bg-viz-orange text-white text-1xl p-4 rounded flex items-center space-x-2 hover:bg-orange-600" onClick={ addToCart(product) }>
+              <button className="bg-gradient-to-r text-white text-1xl p-4 rounded flex items-center space-x-2 hover:bg-orange-600" onClick={ addToCart(product) }>
                 <span>Add to Cart</span>
                 <FontAwesomeIcon icon={faShoppingCart} />
               </button>
