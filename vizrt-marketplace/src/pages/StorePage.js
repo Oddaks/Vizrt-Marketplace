@@ -60,6 +60,7 @@ const StorePage = () => {
                     color={color} setColor={setColor}
                     filterProducts={filterProducts}
                 />
+
                 <section className="overflow-auto  p-2 auto-rows-min col-span-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3 place-items-start">
                     {filteredProducts.map(product => (
                         <ProductCard key={product.id} product={product} />
