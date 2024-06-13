@@ -18,6 +18,7 @@ const ProductPage = () => {
         fetchProduct();
     }, [productId]);
 
+    //async
     if (!product) {
         return <div>Loading...</div>;
     }
@@ -31,11 +32,6 @@ const ProductPage = () => {
             <div className="grid grid-cols-1 p-4">
                 <ProductInfo product={product} />
 
-            </div>
-            <div className="color">
-                <p className="select-color b">
-                    Select Color
-                </p>
             </div>
         </div>
     );
