@@ -17,8 +17,8 @@ const OrderPage = () => {
                     <div className="box-border">
                         {order.length > 0 ? (
                             <div>
-                                <div className="download-order flex flex-col justify-center items-center text-center space-y-4">
-                                    <h2 className="order-complete text-3xl font-bold">Thank you for your order!</h2>
+                                <div className="download-order flex flex-col justify-center items-center border-b text-center-sm space-y-4">
+                                    <h3 className="order-complete text-3xl font-bold">Thank you for your order!</h3>
                                     <p className="download-order text-xl">You can download your order here:</p>
                                     <button className="text-3xl hover:text-blue-700 mt-4">
                                         <FontAwesomeIcon icon={faDownload} />
@@ -27,6 +27,11 @@ const OrderPage = () => {
                                 <div className="order-details flex flex-col justify-center items-center text-center space-y-4 mt-8">
                                     <h2 className="order-details text-3xl font-bold">Order Details</h2>
                                     <p className="order-details text-xl">Order Number: 34998760</p>
+                                    <div className="flex flex-wrap justify-center items-center text-center mt-5">
+                                    <button className="bg-gray-700 hover:bg-gray-900 mb-2 text-white font-bold py-2 px-4 border-radius-5 rounded">
+                                        View receipt
+                                    </button>
+                                </div>
                                 </div>
                                 <div className="order-products flex flex-wrap justify-center items-center text-center space-y-4 mt-8">
                                     {order.map((product, index) => (
