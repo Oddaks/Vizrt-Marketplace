@@ -58,7 +58,6 @@ const ProductEditor = ({ product }) => {
       <div className="max-w-7xl mx-auto flex">
         {/* Left side */}
         <div className="w-2/3 pr-4 border-r border-white">
-          <h3 className="text-2xl font-bold text-white mb-4">Bundle Includes</h3>
           <div className="grid grid-cols-6 grid-rows-4 gap-4 relative">
             <button className="absolute text-white left-20 top-1/2" onClick={() => cycleColor(-1)}>
               <FontAwesomeIcon icon={faArrowCircleLeft} size="2x" />
