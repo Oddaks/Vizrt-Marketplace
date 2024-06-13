@@ -1,3 +1,4 @@
+// https://kaderbiral26.medium.com/building-a-custom-dropdown-component-in-react-step-by-step-e12f4330fb58, (05.06.2024, HJ)
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faBars, faShoppingCart, faUserCircle, faSignOut, faTableCellsLarge } from '@fortawesome/free-solid-svg-icons';
 import { useState, useRef, useEffect } from 'react';
