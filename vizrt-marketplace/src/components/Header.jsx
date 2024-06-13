@@ -37,7 +37,7 @@ const Header = () => {
         <header className="navbar bg-white text-black p-2 relative max-w-full h-[100px] flex items-center">
             <div className="logo absolute top left-[8px] h-[7em] w-[7em]">
                 {/* Logo image and onclick that leads to landing page */}
-                <button onClick={() => { window.location.href = '/'; }}>
+                <button onClick={() => { window.location.href = '../StorePage'; }}>
                     <img src={logo} alt="Logo" />
                 </button>
             </div>
