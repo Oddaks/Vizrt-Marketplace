@@ -3,6 +3,9 @@ module.exports = {
   darkMode: false,
   theme: {
     extend: {
+      borderColor: {
+        'viz-orange': '#EF804E',
+      },
       backgroundColor: {
         'viz-blue': '#1D363F',
         'viz-dark-blue': '#1A2C32',
