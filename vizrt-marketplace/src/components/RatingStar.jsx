@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faStarHalfAlt, faStar as farStar } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faStarHalf, faStar as farStar } from '@fortawesome/free-solid-svg-icons';
 
 const RatingStar = ({ rate }) => {
     const totalStars = 5;
@@ -13,10 +13,7 @@ const RatingStar = ({ rate }) => {
             {Array(fullStars).fill().map((_, i) => (
                 <FontAwesomeIcon key={i} icon={faStar} className="text-viz-orange" />
             ))}
-            {halfStar ? <FontAwesomeIcon icon={faStarHalfAlt} className="text-viz-orange" /> : null}
-            {Array(emptyStars).fill().map((_, i) => (
-                <FontAwesomeIcon key={i} icon={farStar} className="text-gray-400" />
-            ))}
+            {halfStar ? <FontAwesomeIcon icon={faStarHalf} className="text-viz-orange" /> : null}
         </div>
     );
 };
