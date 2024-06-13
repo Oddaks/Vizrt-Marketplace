@@ -29,10 +29,6 @@ const ProductPage = () => {
                 <BackButton />
                 <ProductEditor product={product} onProductUpdate={(updatedProduct) => setProduct(updatedProduct)} />
             </div>
-            <div className="grid grid-cols-1 p-4">
-                <ProductInfo product={product} />
-
-            </div>
         </div>
     );
 };
