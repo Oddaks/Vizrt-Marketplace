@@ -7,6 +7,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import ColorSamples from "./ColorSamples";
+import { useCart } from '../Tools/CartContext';
+
 
 const ColorButton = ({ color, changeColor, text }) => {
   return (
@@ -23,6 +25,8 @@ const ProductEditor = ({ product }) => {
   const [showFontArrow, setShowFontArrow] = useState(true);
   const [showStyleArrow, setShowStyleArrow] = useState(true);
   const [showSizeArrow, setShowSizeArrow] = useState(true);
+  const { cart, addToCart, removeFromCart } = useCart();
+
 
   const [frameColor, setFrameColor] = useState('border-green-500');
   const colors = ['border-pink-500', 'border-teal-300', 'border-viz-orange', 'border-yellow-300'];
@@ -187,7 +191,7 @@ const ProductEditor = ({ product }) => {
           {/* Checkout Cart link */}
           <div className="flex justify-center mt-4">
             <Link to="/CartCheckoutPage">
-              <button className="bg-viz-orange text-white text-1xl p-4 rounded flex items-center space-x-2 hover:bg-orange-600">
+              <button className="bg-viz-orange text-white text-1xl p-4 rounded flex items-center space-x-2 hover:bg-orange-600" onClick={ addToCart(product) }>
                 <span>Add to Cart</span>
                 <FontAwesomeIcon icon={faShoppingCart} />
               </button>
